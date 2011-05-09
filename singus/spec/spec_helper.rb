@@ -1,10 +1,7 @@
-begin
-  require 'spec'
-rescue LoadError
-  require 'rubygems' unless ENV['NO_RUBYGEMS']
-  gem 'rspec'
-  require 'spec'
-end
+require 'rubygems'
+gem 'rspec'
+require 'rspec'
 
-$:.unshift(File.dirname(__FILE__) + '/../lib')
-require 'singus'
+require 'singus/version'
+
+include Singus

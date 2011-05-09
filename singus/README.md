@@ -1,32 +1,34 @@
-= singus
+# singus
 
-* http://github.com/#{github_username}/#{project_name}
+* http://github.com/FIX/singus
+* http://github.com/FIX/singus/issues
+* FIX (email at server.com)
 
-== DESCRIPTION:
+## DESCRIPTION:
 
 FIX (describe your package)
 
-== FEATURES/PROBLEMS:
+## FEATURES/PROBLEMS:
 
 * FIX (list of features or problems)
 
-== SYNOPSIS:
+## SYNOPSIS:
 
-  FIX (code sample of usage)
+    $ singus
 
-== REQUIREMENTS:
+## REQUIREMENTS:
 
 * FIX (list of requirements)
 
-== INSTALL:
+## INSTALL:
 
-* FIX (sudo gem install, anything else)
+    $ sudo gem install singus
 
-== LICENSE:
+## LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2011 uthor=vpeurala
+Copyright (c) 2011 FIX
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

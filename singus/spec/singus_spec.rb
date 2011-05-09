@@ -1,11 +1,9 @@
-require File.dirname(__FILE__) + '/spec_helper.rb'
+require 'singus/version'
 
-# Time to add your specs!
-# http://rspec.info/
-describe "Place your specs here" do
-  
-  it "find this spec in spec directory" do
-    # violated "Be sure to write your specs"
+require 'spec_helper'
+
+describe Singus do
+  it "should have a VERSION constant" do
+    Singus.const_defined?('VERSION').should == true
   end
-  
 end
