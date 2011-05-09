@@ -1,8 +1,8 @@
 require 'rubygems'
 gem 'rspec'
 require 'rspec'
+require 'factory_girl'
 
-require 'singus/version'
-require 'singus/song'
+require 'singus'
 
 include Singus

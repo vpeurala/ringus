@@ -1,5 +1,3 @@
-require 'factory_girl'
-
 describe "Song" do
   Factory.define(:song) do |song|
     song.name "Pekan laulu"
