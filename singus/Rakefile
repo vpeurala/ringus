@@ -7,9 +7,11 @@ require 'factory_girl'
 
 Hoe.plugin :yard
 Hoe.plugin :rcov
+Hoe.plugin :bundler
+Hoe.plugin :doofus
 
 Hoe.spec('singus') do
-  self.developer('FIX', 'FIX@server.com')
+  self.developer('Ville Peurala', 'ville.peurala@gmail.com')
 
   self.rspec_options += ['--colour', '--format', 'd']
 

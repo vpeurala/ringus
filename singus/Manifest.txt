@@ -5,6 +5,5 @@ Rakefile
 bin/singus
 lib/singus.rb
 lib/singus/singus.rb
+lib/singus/song.rb
 lib/singus/version.rb
-spec/spec_helper.rb
-spec/singus_spec.rb
