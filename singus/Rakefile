@@ -20,7 +20,8 @@ Hoe.spec('singus') do
 
   self.extra_dev_deps += [
     ['rspec'],
-    ['yard']
+    ['yard'],
+    ['factory_girl']
   ]
 end
 
