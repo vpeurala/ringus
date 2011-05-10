@@ -3,10 +3,9 @@
 require 'rubygems'
 require 'hoe'
 require 'hoe/signing'
-require 'factory_girl'
+require 'rspec'
 
 Hoe.plugin :yard
-Hoe.plugin :rcov
 Hoe.plugin :bundler
 Hoe.plugin :doofus
 
@@ -21,8 +20,15 @@ Hoe.spec('singus') do
   self.extra_dev_deps += [
     ['rspec'],
     ['yard'],
-    ['factory_girl']
+    ['factory_girl'],
+    ['rcov']
   ]
+end
+
+desc "Run specs with rcov"
+RSpec::Core::RakeTask.new("spec:rcov") do |t|
+  t.rcov = true
+  t.rcov_opts = ['--exclude', '/gems/,jsignal_internal']
 end
 
 # vim: syntax=ruby

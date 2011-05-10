@@ -8,6 +8,7 @@ GEM
     hoe-yard (0.1.2)
       yard (>= 0.2.3.1)
     rake (0.8.7)
+    rcov (0.9.9-java)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)
@@ -25,5 +26,6 @@ DEPENDENCIES
   factory_girl
   hoe (>= 2.9.4)
   hoe-yard (>= 0.1.2)
+  rcov
   rspec
   yard
