@@ -6,6 +6,7 @@ require 'hoe/signing'
 require 'factory_girl'
 
 Hoe.plugin :yard
+Hoe.plugin :rcov
 
 Hoe.spec('singus') do
   self.developer('FIX', 'FIX@server.com')
