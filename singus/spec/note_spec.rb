@@ -53,4 +53,10 @@ describe Note do
     Note.parse("Db5-1/16").sound.should == "Default"
     Note.parse("Db5").velocity.should == 127
   end
+
+  it "can be a rest" do
+    Note.parse("REST").note_name.should == "REST"
+    Note.parse("REST").duration.should == 1/4.0
+    Note.parse("REST-1/16").duration.should == 1/16.0
+  end
 end
