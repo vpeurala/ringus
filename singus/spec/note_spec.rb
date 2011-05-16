@@ -48,17 +48,10 @@ describe Note do
     note.duration.should == 1/8.0
   end
 	
-  it "should be parsable from string with any combination of the above in any order" do
+  it "should have sensible defaults" do
     Note.parse("Db5-122-Horn-1/16").should == note
     Note.parse("Db5-122-Horn").duration.should == 1/4.0
     Note.parse("Db5-122").sound.should == "Default"
     Note.parse("Db5").velocity.should == 127
   end
-
-  it "should not require strict formatting in obvious cases"
-
-  it "should have the previous sound used if no explicit sound given"
-  it "should have the previous duration used if no explicit duration given"
-  it "should have the previous velocity used if no explicit velocity given"
-  it "should have the previous note name if no explicit note name given"
 end
