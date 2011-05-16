@@ -4,7 +4,7 @@ describe Note do
   Factory.define :note do |n|
     n.velocity 122
     n.note_name "Db5"
-    n.duration 1/4.0
+    n.duration 1/16.0
     n.sound "Horn"
   end
 
@@ -34,23 +34,25 @@ describe Note do
   end
 	
   it "should be parsable from string with note name and velocity" do
-    note = Note.parse "C4-100"
+    note = Note.parse "D4-100"
     note.velocity.should == 100
   end
 
   it "should be parsable from string with note name, velocity and sound" do
-    note = Note.parse "C4-100-Piano"
+    note = Note.parse "D4-100-Piano"
     note.sound.should == "Piano"
   end
 
   it "should be parsable from string with note name, velocity, sound and duration" do
-    note = Note.parse "C4-100-Piano-1/8"
+    note = Note.parse "D4-100-Piano-1/8"
     note.duration.should == 1/8.0
   end
 	
   it "should be parsable from string with any combination of the above in any order" do
-    parsed_note = Note.parse "Db5-122-Horn-1/4"
-    parsed_note.should == note
+    Note.parse("Db5-122-Horn-1/16").should == note
+    Note.parse("Db5-122-Horn").duration.should == 1/4.0
+    Note.parse("Db5-122").sound.should == "Default"
+    Note.parse("Db5").velocity.should == 127
   end
 
   it "should not require strict formatting in obvious cases"
