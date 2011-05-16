@@ -33,25 +33,24 @@ describe Note do
     note.note_name.should == "D4"
   end
 	
-  it "should be parsable from string with note name and velocity" do
-    note = Note.parse "D4-100"
-    note.velocity.should == 100
+  it "should be parsable from string with note name and duration" do
+    Note.parse("D4-1").duration.should == 1.0
+    Note.parse("D4-1/8").duration.should == 1/8.0
+    Note.parse("D4-1/8-Piano-122").duration.should == 1/8.0
   end
 
   it "should be parsable from string with note name, velocity and sound" do
-    note = Note.parse "D4-100-Piano"
+    note = Note.parse "D4-1/8-Piano"
     note.sound.should == "Piano"
   end
 
   it "should be parsable from string with note name, velocity, sound and duration" do
-    note = Note.parse "D4-100-Piano-1/8"
-    note.duration.should == 1/8.0
   end
 	
   it "should have sensible defaults" do
-    Note.parse("Db5-122-Horn-1/16").should == note
-    Note.parse("Db5-122-Horn").duration.should == 1/4.0
-    Note.parse("Db5-122").sound.should == "Default"
+    Note.parse("Db5-1/16-Horn-122").should == note
+    Note.parse("Db5-1/16-Horn").duration.should == 1/16.0
+    Note.parse("Db5-1/16").sound.should == "Default"
     Note.parse("Db5").velocity.should == 127
   end
 end

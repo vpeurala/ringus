@@ -12,5 +12,9 @@ describe "Rhythm" do
   it "should be created" do
     rhythm.should_not be_nil 
   end
+
+  it "can be parsed from string" do
+    Rhythm.parse("")
+  end
 end
 
