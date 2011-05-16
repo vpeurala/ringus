@@ -21,7 +21,8 @@ Hoe.spec('singus') do
     ['rspec'],
     ['yard'],
     ['factory_girl'],
-    ['rcov']
+    ['rcov'],
+    ['autotest']
   ]
 end
 
