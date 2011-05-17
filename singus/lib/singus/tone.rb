@@ -64,7 +64,7 @@ module Singus
       @pitch == other.pitch
     end
 
-    def is_rest?
+    def rest?
       false
     end
   end
@@ -74,8 +74,16 @@ module Singus
       @pitch = 0
     end
 
-    def is_rest?
+    def rest?
       true
+    end
+
+    def midi_value
+      0
+    end
+
+    def note_name
+      "REST"
     end
   end
 end

@@ -79,5 +79,27 @@ describe Tone do
       Tone.from_note_name("C5").midi_value.should == 72
     end
   end
+
+  it "is not a rest if note name, pitch or midi value given" do
+    Tone.from_note_name("C0").should_not be_rest
+    Tone.from_pitch(1).should_not be_rest
+    Tone.from_midi_value(1).should_not be_rest
+  end
+
+  describe Rest do
+    it "can be created from parsing" do
+      Tone.from_note_name("REST").should be_rest
+      Tone.from_note_name("Rest").should be_rest
+      Tone.from_note_name("rest").should be_rest
+    end
+
+    it "can be created from pitch 0" do
+      Tone.from_pitch(0).should be_rest
+    end
+
+    it "can be created from midi value 0" do
+      Tone.from_midi_value(0).should be_rest
+    end
+  end
 end
 
