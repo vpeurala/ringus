@@ -5,6 +5,7 @@ GEM
     addressable (2.2.6)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
+    autotest-growl (0.2.9)
     bcrypt-ruby (2.1.4)
     bcrypt-ruby (2.1.4-java)
     data_mapper (1.1.0)
@@ -91,6 +92,7 @@ PLATFORMS
 
 DEPENDENCIES
   autotest
+  autotest-growl
   bundler
   data_mapper
   dm-sqlite-adapter

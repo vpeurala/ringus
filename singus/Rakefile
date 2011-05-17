@@ -24,6 +24,7 @@ Hoe.spec('singus') do
     ['factory_girl'],
     ['rcov'],
     ['autotest'],
+    ['autotest-growl'],
     ['bundler'],
     ['hoe-bundler'],
     ['data_mapper'],
