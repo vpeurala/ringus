@@ -1,11 +1,11 @@
 module Singus
   class Note
-    attr_accessor :note_name, :pitch, :duration, :sound, :velocity
+    attr_accessor :tone, :pitch, :duration, :sound, :velocity
 
     def self.parse(dsl)
       n = Note.new
       d = dsl.split("-")
-      n.note_name = d[0] || "C4"
+      n.tone = Tone.from_note_name(d[0]) || Tone.from_note_name("C4")
       n.duration = parse_duration(d[1]) || parse_duration("1/4")
       n.sound = d[2] || "Default"
       n.velocity = (d[3].nil? || d[3].strip.empty? || d[3].to_i == 0) ? 127 : d[3].to_i
@@ -20,7 +20,7 @@ module Singus
     end
 
     def ==(other)
-      @note_name == other.note_name && @velocity == other.velocity && @sound == other.sound && @duration == other.duration
+      @tone == other.tone && @velocity == other.velocity && @sound == other.sound && @duration == other.duration
     end
   end
 end

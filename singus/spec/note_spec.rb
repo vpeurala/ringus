@@ -3,7 +3,7 @@ require 'spec_helper.rb'
 describe Note do
   Factory.define :note do |n|
     n.velocity 122
-    n.note_name "Db5"
+    n.tone Tone.from_note_name("Db5")
     n.duration 1/16.0
     n.sound "Horn"
   end
@@ -17,7 +17,7 @@ describe Note do
   end
 
   it "always should have note name" do
-    note.note_name.should_not be_nil
+    note.tone.should_not be_nil
   end
 
   it "always should have duration" do
@@ -30,7 +30,7 @@ describe Note do
 
   it "should be parsable from string with only note name" do
     note = Note.parse "D4"
-    note.note_name.should == "D4"
+    note.tone.should == Tone.from_note_name("D4")
   end
 	
   it "should be parsable from string with note name and duration" do
@@ -55,7 +55,7 @@ describe Note do
   end
 
   it "can be a rest" do
-    Note.parse("REST").note_name.should == "REST"
+    Note.parse("REST").tone.should == "REST"
     Note.parse("REST").duration.should == 1/4.0
     Note.parse("REST-1/16").duration.should == 1/16.0
   end

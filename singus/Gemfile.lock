@@ -13,6 +13,7 @@ GEM
     hoe-yard (0.1.2)
       yard (>= 0.2.3.1)
     rake (0.8.7)
+    rcov (0.9.9)
     rcov (0.9.9-java)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
@@ -26,6 +27,7 @@ GEM
 
 PLATFORMS
   java
+  ruby
 
 DEPENDENCIES
   autotest
