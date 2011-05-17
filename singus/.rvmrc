@@ -1,2 +1,7 @@
 rvm use ree
+rvm gemset create singus
 rvm gemset use singus
+gem install -q --no-rdoc --no-ri bundler
+bundle install
+rake
+
