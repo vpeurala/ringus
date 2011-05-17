@@ -13,6 +13,8 @@ gem "rcov", ">=0", :group => [:development, :test]
 gem "autotest", ">=0", :group => [:development, :test]
 gem "bundler", ">=0", :group => [:development, :test]
 gem "hoe-bundler", ">=0", :group => [:development, :test]
+gem "data_mapper", ">=0", :group => [:development, :test]
+gem "dm-sqlite-adapter", ">=0", :group => [:development, :test]
 gem "hoe", ">=2.9.4", :group => [:development, :test]
 
 # vim: syntax=ruby

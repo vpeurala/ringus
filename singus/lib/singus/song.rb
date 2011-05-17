@@ -1,5 +1,10 @@
 module Singus
   class Song
+    include DataMapper::Resource
+
+    property :id, Serial
+    property :name, String
+
     attr_accessor :name, :tempo, :meter, :key
 
     def length_in_bars

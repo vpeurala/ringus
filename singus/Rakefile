@@ -4,6 +4,7 @@ require 'rubygems'
 require 'hoe'
 require 'hoe/signing'
 require 'rspec'
+require 'data_mapper'
 
 Hoe.plugin :yard
 Hoe.plugin :bundler
@@ -24,7 +25,9 @@ Hoe.spec('singus') do
     ['rcov'],
     ['autotest'],
     ['bundler'],
-    ['hoe-bundler']
+    ['hoe-bundler'],
+    ['data_mapper'],
+    ['dm-sqlite-adapter']
   ]
 end
 
