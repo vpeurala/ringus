@@ -14,6 +14,20 @@ describe Bar do
       @bar.should be_empty
     end
 
-    it "has meter"
+    it "has default meter if none given" do
+      @bar.meter.should == "4/4"
+    end
+
+    it "has given meter if given" do
+      @bar = Bar.new :meter => "7/8"
+      @bar.meter.should == "7/8" 
+    end
+
+    it "can be added notes to" do
+      @bar << Note.parse("D#4")
+      @bar.each do |note|
+        note.should == Note.parse("D#4")
+      end
+    end
   end
 end

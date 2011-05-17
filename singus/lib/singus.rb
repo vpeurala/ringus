@@ -5,4 +5,5 @@ require 'singus/rhythm'
 require 'singus/tone'
 require 'singus/note'
 require 'singus/bar'
+require 'singus/section'
 
