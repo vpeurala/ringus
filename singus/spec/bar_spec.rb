@@ -13,5 +13,7 @@ describe Bar do
     it "is empty" do
       @bar.should be_empty
     end
+
+    it "has meter"
   end
 end
