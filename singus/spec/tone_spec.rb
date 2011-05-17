@@ -66,11 +66,6 @@ describe Tone do
     lowered_note.midi_value.should == 65
   end
 
-  it "can recognize the possible major scales it is part of" do
-    original_note = Tone.from_pitch(440)
-    original_note.scales.should == ["C", "D", "E", "F", "G", "A", "Bb"]
-  end
-
   describe "note name parsing" do
     it "supports sharps and flats" do
       Tone.from_note_name("C4").midi_value.should == 60

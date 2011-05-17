@@ -15,7 +15,8 @@ module Singus
     end
 
     def self.note_name_to_midi_value(note_name)
-      match_result = note_name.match(/([CDEFGAB])(#|b)?([0-9])/)
+      return 0 if note_name =~ /rest/i
+      match_result = note_name.match(/([CDEFGAB])(#|b)?([0-9])|REST/)
       note_name = match_result[1]
       sharp_or_flat = case match_result[2] when "#" then 1 when "b" then -1 else 0 end
       octave = match_result[3].to_i
@@ -37,15 +38,18 @@ module Singus
     end
  
     def self.from_pitch(pitch)
-      Tone.new(pitch)
+      return Rest.new if pitch == 0
+      return Tone.new(pitch)
     end
  
     def self.from_note_name(note_name)
-      Tone.new(midi_value_to_pitch(note_name_to_midi_value(note_name)))
+      return Rest.new if note_name =~ /rest/i
+      return Tone.new(midi_value_to_pitch(note_name_to_midi_value(note_name)))
     end
 
     def self.from_midi_value(midi_value)
-      Tone.new(midi_value_to_pitch(midi_value))
+      return Rest.new if midi_value == 0
+      return Tone.new(midi_value_to_pitch(midi_value))
     end
 
     def up(steps = 1)
@@ -58,6 +62,20 @@ module Singus
 
     def ==(other)
       @pitch == other.pitch
+    end
+
+    def is_rest?
+      false
+    end
+  end
+
+  class Rest < Tone
+    def initialize
+      @pitch = 0
+    end
+
+    def is_rest?
+      true
     end
   end
 end

@@ -39,12 +39,17 @@ describe Note do
     Note.parse("D4-1/8-Piano-122").duration.should == 1/8.0
   end
 
-  it "should be parsable from string with note name, velocity and sound" do
+  it "should be parsable from string with note name, duration and sound" do
     note = Note.parse "D4-1/8-Piano"
     note.sound.should == "Piano"
   end
 
-  it "should be parsable from string with note name, velocity, sound and duration" do
+  it "should be parsable from string with note name, duration, sound and velocity" do
+    note = Note.parse "D4-1/8-Piano-119"
+    note.tone.should == Tone.from_note_name("D4")
+    note.duration.should == 1/8.0
+    note.sound.should == "Piano"
+    note.velocity.should == 119
   end
 	
   it "should have sensible defaults" do
@@ -55,7 +60,7 @@ describe Note do
   end
 
   it "can be a rest" do
-    Note.parse("REST").tone.should == "REST"
+    Note.parse("REST").tone.should be_instance_of Rest
     Note.parse("REST").duration.should == 1/4.0
     Note.parse("REST-1/16").duration.should == 1/16.0
   end
