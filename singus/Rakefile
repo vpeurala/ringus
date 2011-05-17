@@ -22,7 +22,9 @@ Hoe.spec('singus') do
     ['yard'],
     ['factory_girl'],
     ['rcov'],
-    ['autotest']
+    ['autotest'],
+    ['bundler'],
+    ['hoe-bundler']
   ]
 end
 
