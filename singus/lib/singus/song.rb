@@ -3,7 +3,10 @@ module Singus
     include DataMapper::Resource
 
     property :id, Serial
-    property :name, String
+    property :name, String, :required => true
+    property :default_tempo, Integer, :default => 120
+    has 1, :default_meter, 'Meter'
+    has n, :sections
 
     attr_accessor :name, :tempo, :meter, :key
 

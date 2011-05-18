@@ -21,6 +21,8 @@ GEM
     data_objects (0.10.5)
       addressable (~> 2.1)
     diff-lcs (1.1.2)
+    dm-adjust (1.1.0)
+      dm-core (~> 1.1.0)
     dm-aggregates (1.1.0)
       dm-core (~> 1.1.0)
     dm-constraints (1.1.0)
@@ -30,6 +32,8 @@ GEM
     dm-do-adapter (1.1.0)
       data_objects (~> 0.10.2)
       dm-core (~> 1.1.0)
+    dm-is-list (1.1.0)
+      dm-adjust (~> 1.1.0)
     dm-migrations (1.1.0)
       dm-core (~> 1.1.0)
     dm-serializer (1.1.0)
@@ -97,6 +101,7 @@ DEPENDENCIES
   autotest-growl
   bundler
   data_mapper
+  dm-is-list
   dm-sqlite-adapter
   dm-yaml-adapter
   factory_girl

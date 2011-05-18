@@ -1,2 +1,4 @@
 --- 
-- id: 1
+- name: Pekan laulu
+  id: 1
+  default_tempo: 120

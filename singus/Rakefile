@@ -29,7 +29,8 @@ Hoe.spec('singus') do
     ['hoe-bundler'],
     ['data_mapper'],
     ['dm-sqlite-adapter'],
-    ['dm-yaml-adapter']
+    ['dm-yaml-adapter'],
+    ['dm-is-list']
   ]
 end
 
