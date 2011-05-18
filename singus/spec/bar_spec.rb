@@ -29,5 +29,7 @@ describe Bar do
         note.should == Note.parse("D#4")
       end
     end
+
+    it "complains if more notes added than the bar can take"
   end
 end

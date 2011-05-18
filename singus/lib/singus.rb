@@ -2,9 +2,8 @@ require 'rubygems'
 require 'data_mapper'
 
 DataMapper::Logger.new($stdout, :debug)
-DataMapper.setup(:default, "sqlite::memory:")
+DataMapper.setup(:default, {:adapter => "yaml", :path => "db"})
 
-require 'singus/singus'
 require 'singus/version'
 require 'singus/song'
 require 'singus/rhythm'

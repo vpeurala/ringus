@@ -52,6 +52,8 @@ GEM
       uuidtools (~> 2.1.2)
     dm-validations (1.1.0)
       dm-core (~> 1.1.0)
+    dm-yaml-adapter (1.1.0)
+      dm-core (~> 1.1.0)
     do_jdbc (0.10.5-java)
       data_objects (= 0.10.5)
     do_sqlite3 (0.10.5)
@@ -96,6 +98,7 @@ DEPENDENCIES
   bundler
   data_mapper
   dm-sqlite-adapter
+  dm-yaml-adapter
   factory_girl
   hoe (>= 2.9.4)
   hoe-bundler
